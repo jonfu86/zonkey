@@ -1,0 +1,7 @@
+/client/dist/**
+.babelrc
+jest.config.json
+jest.setup.js
+.package-lock.json
+.package.json
+.webpack.config.js
