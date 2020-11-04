@@ -1,0 +1,45 @@
+.quiz {
+
+}
+
+.overlay {
+  position: absolute;
+  width: 500px;
+  top: 14%;
+  left: 50%;
+  transform: translate(-250px);
+}
+
+.image {
+  margin: 0 auto;
+  height: 70%;
+  display: block;
+}
+
+.buttons {
+  display: block;
+  margin: 50px auto;
+  width: 20%;
+}
+
+.realButton, .fakeButton, .nextButton {
+  /* display: block; */
+}
+
+.nextButton {
+  margin: 50px auto;
+  display: block;
+}
+
+.realButton {
+  float: right;
+
+}
+
+.fakeButton {
+  float: left;
+}
+
+.hidden {
+  display: none;
+}
