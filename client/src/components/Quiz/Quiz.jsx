@@ -1,5 +1,8 @@
 import React from 'react';
 import style from './styles.css';
+import wrong from 'img/wrong.png';
+import correct from 'img/correct.png';
+
 
 export default class Quiz extends React.Component {
   constructor(props) {
@@ -45,9 +48,9 @@ export default class Quiz extends React.Component {
 
     let overlay;
     if(answer === true) {
-      overlay = <div> CORRECT! </div>;
+      overlay = <img className={style.overlay} src={correct}/>;
     } else if (answer === false) {
-      overlay = <div> WRONG! </div>;
+      overlay = <img className={style.overlay} src={wrong}/>;
     }
 
     return (

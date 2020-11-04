@@ -2,9 +2,17 @@
 
 }
 
+.overlay {
+  position: absolute;
+  width: 500px;
+  top: 14%;
+  left: 50%;
+  transform: translate(-250px);
+}
+
 .image {
   margin: 0 auto;
-  width: 70%;
+  height: 70%;
   display: block;
 }
 
