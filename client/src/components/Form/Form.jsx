@@ -25,6 +25,7 @@ export default class Form extends React.Component {
 
   handleSubmit(e) {
     const { addAnimal } = this.props;
+    console.log(addAnimal);
     addAnimal(this.state);
   }
 

@@ -14,10 +14,10 @@ export default class Quiz extends React.Component {
     this.handleNextClick = this.handleNextClick.bind(this);
   }
 
-  handleButtonClick(e){
+  handleButtonClick(e) {
     const { updateCount, animal } = this.props;
 
-    let selection = e.target.innerHTML === 'Real' ? true : false ;
+    let selection = e.target.innerHTML === 'Real' ? true : false;
     selection = selection === animal.real ? true : false;
 
     //update overlay and display next button
@@ -30,9 +30,12 @@ export default class Quiz extends React.Component {
 
   }
 
-  handleNextClick(e){
+  handleNextClick(e) {
     const { pickAnimal } = this.props;
     pickAnimal();
+    this.setState({
+      answer: undefined
+    })
   }
 
   render() {
@@ -47,16 +50,16 @@ export default class Quiz extends React.Component {
     } = this.state;
 
     let overlay;
-    if(answer === true) {
-      overlay = <img className={style.overlay} src={correct}/>;
+    if (answer === true) {
+      overlay = <img className={style.overlay} src={correct} />;
     } else if (answer === false) {
-      overlay = <img className={style.overlay} src={wrong}/>;
+      overlay = <img className={style.overlay} src={wrong} />;
     }
 
     return (
       <div className={style.quiz}>
         {overlay}
-        <img src={animal.image} className={style.image}/>
+        <img src={animal.image} className={style.image} />
         <button className={answer === undefined ? style.hidden : style.nextButton} type="button" onClick={this.handleNextClick}>Next</button>
         <div className={style.buttons}>
           <button className={style.fakeButton} disabled={answer !== undefined} type="button" onClick={this.handleButtonClick}>Fake</button>

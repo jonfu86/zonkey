@@ -32,8 +32,6 @@ app.get('/animal/:id', (req, res) => {
 });
 
 app.post('/animal', (req, res) => {
-  // const { body } = req.body;
-  // console.log(body);
   db.addAnimal(req.body)
     .then((response) => {
       if (response) {
@@ -42,5 +40,19 @@ app.post('/animal', (req, res) => {
     })
     .catch((err) => {
       res.status(500).send(`error while adding animal | ${err}`)
+    });
+});
+
+app.get('/animalCount', (req, res) => {
+  db.animalCount()
+    .then((count) => {
+      if (!count) {
+        res.status(404).send(`count could not be found`);
+      } else {
+        res.status(200).send(`${count}`);
+      }
+    })
+    .catch((err) => {
+      res.status(500).send(`error while finding count | ${err} `)
     });
 });

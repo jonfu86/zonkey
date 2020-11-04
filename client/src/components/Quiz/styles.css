@@ -1,18 +1,22 @@
 .quiz {
-
+ height: 70%;
+ position: relative;
 }
 
 .overlay {
   position: absolute;
-  width: 500px;
-  top: 14%;
+  /* width: 500px; */
+  height: 400px;
+  /* top: 14%; */
+  top: 10%;
   left: 50%;
-  transform: translate(-250px);
+  transform: translate(calc(-50%));
+  pointer-events: none;
 }
 
 .image {
   margin: 0 auto;
-  height: 70%;
+  height: 80%;
   display: block;
 }
 

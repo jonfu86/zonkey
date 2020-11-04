@@ -33,10 +33,15 @@ const addAnimal = (animal) => {
     });
 };
 
-const getAnimal = (id) => Animal.findOne({ id });
+const getAnimal = (id) => Animal.findOne({ id: id });
+
+const animalCount = () => Animal.countDocuments();
+
+
 
 module.exports = {
   addAnimal,
   getAnimal,
+  animalCount,
   db,
 };
