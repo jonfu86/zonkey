@@ -67,7 +67,6 @@ export default class App extends React.Component {
   getAnimal(id) {
     axios.get(`/animal/${id}`)
       .then((response) => {
-        console.log(response);
         this.setState((curState) => {
 
           var index = curState.animalSelection.indexOf(id);
@@ -88,8 +87,6 @@ export default class App extends React.Component {
   getAnimalCount() {
     axios.get(`/animalCount`)
       .then((response) => {
-
-        // console.log('animalCount: ', response);
         this.createAnimalSelection(response.data);
       })
       .then(() => {

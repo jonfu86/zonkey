@@ -60,7 +60,7 @@ export default class Quiz extends React.Component {
       <div className={style.quiz}>
         {overlay}
         <img src={animal.image} className={style.image} />
-        <button className={answer === undefined ? style.hidden : style.nextButton} type="button" onClick={this.handleNextClick}>Next</button>
+        <button className={answer === undefined ? style.hidden : style.nextButton} type="button" onClick={this.handleNextClick}>Next &raquo;</button>
         <div className={style.buttons}>
           <button className={style.fakeButton} disabled={answer !== undefined} type="button" onClick={this.handleButtonClick}>Fake</button>
           <button className={style.realButton} disabled={answer !== undefined} type="button" onClick={this.handleButtonClick}>Real</button>
