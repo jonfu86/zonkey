@@ -3,6 +3,8 @@ import axios from 'axios';
 import style from './styles.css';
 import Quiz from './Quiz/Quiz.jsx'
 
+import Form from './Form/Form.jsx';
+
 export default class App extends React.Component {
   constructor(props) {
     super(props);
@@ -16,7 +18,8 @@ export default class App extends React.Component {
       },
       animalSelection: undefined,
       correctCount: 0,
-      totalCount: 0
+      totalCount: 0,
+      page: 'start',
 
     };
 
@@ -40,6 +43,7 @@ export default class App extends React.Component {
       animalSelection: animalSelection
     })
   }
+
 
   pickAnimal() {
     const { animalSelection, totalCount } = this.state;
@@ -86,6 +90,15 @@ export default class App extends React.Component {
     });
   }
 
+  addAnimal(animal) {
+    axios.post('/animal', animal)
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log('ERROR: ');
+      });
+  }
 
   render() {
     const {
