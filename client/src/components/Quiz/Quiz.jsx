@@ -8,6 +8,7 @@ export default class Quiz extends React.Component {
       answer: undefined
     };
     this.handleButtonClick = this.handleButtonClick.bind(this);
+    this.handleNextClick = this.handleNextClick.bind(this);
   }
 
   handleButtonClick(e){
@@ -24,6 +25,11 @@ export default class Quiz extends React.Component {
     updateCount(selection);
 
 
+  }
+
+  handleNextClick(e){
+    const { pickAnimal } = this.props;
+    pickAnimal();
   }
 
   render() {
@@ -48,7 +54,7 @@ export default class Quiz extends React.Component {
       <div className={style.quiz}>
         {overlay}
         <img src={animal.image} className={style.image}/>
-        <button className={answer === undefined ? style.hidden : style.nextButton}>Next</button>
+        <button className={answer === undefined ? style.hidden : style.nextButton} type="button" onClick={this.handleNextClick}>Next</button>
         <div className={style.buttons}>
           <button className={style.fakeButton} disabled={answer !== undefined} type="button" onClick={this.handleButtonClick}>Fake</button>
           <button className={style.realButton} disabled={answer !== undefined} type="button" onClick={this.handleButtonClick}>Real</button>
