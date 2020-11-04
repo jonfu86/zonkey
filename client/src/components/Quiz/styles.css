@@ -1,0 +1,37 @@
+.quiz {
+
+}
+
+.image {
+  margin: 0 auto;
+  width: 70%;
+  display: block;
+}
+
+.buttons {
+  display: block;
+  margin: 50px auto;
+  width: 20%;
+}
+
+.realButton, .fakeButton, .nextButton {
+  /* display: block; */
+}
+
+.nextButton {
+  margin: 50px auto;
+  display: block;
+}
+
+.realButton {
+  float: right;
+
+}
+
+.fakeButton {
+  float: left;
+}
+
+.hidden {
+  display: none;
+}
